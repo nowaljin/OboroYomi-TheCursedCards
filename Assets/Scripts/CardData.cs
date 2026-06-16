@@ -1,7 +1,20 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewScriptableObjectScript", menuName = "Scriptable Objects/NewScriptableObjectScript")]
-public class NewScriptableObjectScript : ScriptableObject
+[CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
+public class CardData : ScriptableObject
 {
-    
+    public string cardName;
+
+    public string description;
+
+    public int actionCost;
+
+    public Sprite illustration;
+
+    public int attackPower;
+
+    public int healPower;
+
+
+
 }
