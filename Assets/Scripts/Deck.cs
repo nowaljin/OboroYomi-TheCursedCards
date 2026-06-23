@@ -12,9 +12,9 @@ public class Deck : MonoBehaviour
 
     private const float VERTICAL_SPACING = .1f;
 
-    void Start()
+    private void Start()
     {
-        Debug.Log(DrawCard());
+       
         DeckDrawVisuals();
 
     }

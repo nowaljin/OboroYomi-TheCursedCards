@@ -403,10 +403,10 @@ MonoBehaviour:
   drawPile:
   - {fileID: 11400000, guid: f4f77736aa5faa447b9d46e198f5c9dd, type: 2}
   - {fileID: 11400000, guid: 26e5282a5bee0604498c63624da3d8ff, type: 2}
+  - {fileID: 11400000, guid: f4f77736aa5faa447b9d46e198f5c9dd, type: 2}
   - {fileID: 11400000, guid: 26e5282a5bee0604498c63624da3d8ff, type: 2}
   - {fileID: 11400000, guid: f4f77736aa5faa447b9d46e198f5c9dd, type: 2}
-  - {fileID: 11400000, guid: f4f77736aa5faa447b9d46e198f5c9dd, type: 2}
-  - {fileID: 11400000, guid: f4f77736aa5faa447b9d46e198f5c9dd, type: 2}
+  - {fileID: 11400000, guid: 26e5282a5bee0604498c63624da3d8ff, type: 2}
   cardBack: {fileID: 6609325427387525163, guid: 79987147272259a4fb1fdb02c8d1d149, type: 3}
 --- !u!4 &968068800
 Transform:
@@ -417,7 +417,7 @@ Transform:
   m_GameObject: {fileID: 968068798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.03, y: -3.97, z: 0}
+  m_LocalPosition: {x: -7.5, y: -3.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

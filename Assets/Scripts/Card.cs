@@ -24,7 +24,7 @@ public class Card : MonoBehaviour
 
     private int originalSortingOrder;
 
-    [SerializeField] private CardData tempCardData;
+   
 
 
     private void Awake()
@@ -39,7 +39,7 @@ public class Card : MonoBehaviour
         orginalScale = transform.localScale;
         orginalPosition= transform.localPosition;
         originalSortingOrder = sortingGroup.sortingOrder;
-        LoadCardData(tempCardData);
+       
     }
 
     public void LoadCardData(CardData cardData)

@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHand : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerHand : MonoBehaviour
     [SerializeField] private int startingHandSize = 2;
 
     private List<Card> cardsInHand = new List<Card>();
-    void Start()
+    private void Start()
     {
         for (int i = 0; i < startingHandSize; i++)
         {
@@ -24,10 +25,24 @@ public class PlayerHand : MonoBehaviour
 
     public void DrawNextCard()
     {
+        if(cardSlots == null || cardsInHand.Count >= cardSlots.Length)
+        {
+            Debug.Log("Hand is Full or slots are null.");
+            return;
+        }
+
         CardData cardData = deck.DrawCard();
+
+        if (cardData == null)
+        {
+            Debug.Log("No card left in deck.");
+            return;
+        }
+
         int slotIndex = cardsInHand.Count;
         GameObject newCard = Instantiate(cardPrefab, cardSlots[slotIndex].position, Quaternion.identity);
         Card cardComponent = newCard.GetComponent<Card>();
+        cardComponent.LoadCardData(cardData);
         cardsInHand.Add(cardComponent);
         cardsInHand[slotIndex].transform.SetParent(cardSlots[slotIndex]);
 
