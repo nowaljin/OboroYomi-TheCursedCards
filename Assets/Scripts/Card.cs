@@ -17,15 +17,28 @@ public class Card : MonoBehaviour
 
     private Vector3 orginalPosition;
 
+    [SerializeField] private float hoverScale = 2f;
+    [SerializeField] private float hoverOffset = 2f;
+
+    private SortingGroup sortingGroup;
+
+    private int originalSortingOrder;
+
     [SerializeField] private CardData tempCardData;
 
 
-    
-    void Start()
+    private void Awake()
+    {
+        sortingGroup = GetComponent<SortingGroup>();
+        
+    }
+
+
+    private void Start()
     {
         orginalScale = transform.localScale;
         orginalPosition= transform.localPosition;
-
+        originalSortingOrder = sortingGroup.sortingOrder;
         LoadCardData(tempCardData);
     }
 
@@ -41,8 +54,9 @@ public class Card : MonoBehaviour
     private void OnMouseEnter()
     {
         Debug.Log("Mouse Entered");
-        transform.localScale = orginalScale * 2;
-        transform.localPosition += new Vector3(0, 2f, 0f);
+        transform.localScale = orginalScale * hoverScale;
+        transform.localPosition += new Vector3(0, hoverOffset, 0f);
+        sortingGroup.sortingOrder += 1;
     }
 
     private void OnMouseExit()
@@ -50,5 +64,6 @@ public class Card : MonoBehaviour
         Debug.Log("Mouse Exit");
         transform.localScale = orginalScale;
         transform.localPosition = orginalPosition;
+        sortingGroup.sortingOrder = originalSortingOrder;
     }
 }
