@@ -56,17 +56,14 @@ public class Deck : MonoBehaviour
         }
     }
 
-    public void Shuffle()
+     public void Shuffle()
     {
-        // Fisher-Yates Shuffle Algorithm
-        for (int i = drawPile.Count - 1; i > 0; i--)
+        for (int i = 0; i < drawPile.Count; i++)
         {
-            // Explicitly use UnityEngine.Random to avoid System.Random conflict
-            int randomIndex = UnityEngine.Random.Range(0, i + 1);
-            
-            CardData temp = drawPile[i];
+            CardData card = drawPile[i];
+            int randomIndex = Random.Range(i, drawPile.Count);
             drawPile[i] = drawPile[randomIndex];
-            drawPile[randomIndex] = temp;
+            drawPile[randomIndex] = card;
         }
     }
 }

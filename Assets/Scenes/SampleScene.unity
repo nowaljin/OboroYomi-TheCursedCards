@@ -407,7 +407,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 26e5282a5bee0604498c63624da3d8ff, type: 2}
   - {fileID: 11400000, guid: f4f77736aa5faa447b9d46e198f5c9dd, type: 2}
   - {fileID: 11400000, guid: 26e5282a5bee0604498c63624da3d8ff, type: 2}
-  cardBack: {fileID: 6609325427387525163, guid: 79987147272259a4fb1fdb02c8d1d149, type: 3}
+  cardBackPrefab: {fileID: 6609325427387525163, guid: 79987147272259a4fb1fdb02c8d1d149, type: 3}
 --- !u!4 &968068800
 Transform:
   m_ObjectHideFlags: 0
