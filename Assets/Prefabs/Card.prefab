@@ -144,7 +144,6 @@ MonoBehaviour:
   actionsText: {fileID: 7497405715661767428}
   hoverScale: 2
   hoverOffset: 2
-  tempCardData: {fileID: 11400000, guid: 26e5282a5bee0604498c63624da3d8ff, type: 2}
 --- !u!61 &2575132307143581987
 BoxCollider2D:
   m_ObjectHideFlags: 0

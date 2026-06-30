@@ -26,6 +26,8 @@ public class Card : MonoBehaviour
 
     private static bool isBeingDragged = false;
 
+    private CardData cardData;
+
    
 
 
@@ -46,6 +48,7 @@ public class Card : MonoBehaviour
 
     public void LoadCardData(CardData cardData)
     {
+        this.cardData = cardData;
         illustrationRender.sprite= cardData.illustration;
         cardNameText.text = cardData.cardName;
         descriptionText.text = cardData.description;
@@ -91,7 +94,7 @@ public class Card : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-    private void OnMUp()
+    private void OnMouseUp()
     {
         Debug.Log("Mouse up");
         isBeingDragged = false;
@@ -99,5 +102,7 @@ public class Card : MonoBehaviour
         transform.localPosition = orginalPosition;
         sortingGroup.sortingOrder = originalSortingOrder;
     }
+
+    public CardData GetCardData() => cardData;
 
 }
