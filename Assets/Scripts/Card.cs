@@ -28,12 +28,15 @@ public class Card : MonoBehaviour
 
     private CardData cardData;
 
+    private Collider2D cardCollider;
+
    
 
 
     private void Awake()
     {
         sortingGroup = GetComponent<SortingGroup>();
+        cardCollider = GetComponent<Collider2D>();
         
     }
 
@@ -104,5 +107,17 @@ public class Card : MonoBehaviour
     }
 
     public CardData GetCardData() => cardData;
+
+    private void OnDestroy()
+    {
+        isBeingDragged = false;
+    }
+
+    public void SetInteractable(bool interactable)
+    {
+        
+        cardCollider.enabled = interactable;
+
+    }
 
 }

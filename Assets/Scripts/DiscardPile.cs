@@ -20,6 +20,9 @@ public class DiscardPile : MonoBehaviour
 
          discardedCard.GetComponent<Card>().LoadCardData(cardData);
 
+         discardedCard.GetComponent<Card>().SetInteractable(false);
+         
+
          SortingGroup sortingGroup = discardedCard.GetComponent<SortingGroup>();
          sortingGroup.sortingOrder = discardPile.Count - 1;
 
