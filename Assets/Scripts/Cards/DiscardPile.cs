@@ -9,7 +9,7 @@ public class DiscardPile : MonoBehaviour
 
    [SerializeField] private GameObject cardPrefab;
 
-   private const float VERTICAL_SPACING = .1f;
+   private const float VERTICAL_SPACING = .25f;
 
    public void DiscardCard (CardData cardData)
     {
