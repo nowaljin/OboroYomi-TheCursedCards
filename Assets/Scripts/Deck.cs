@@ -6,6 +6,8 @@ public class Deck : MonoBehaviour
     [SerializeField] private List<CardData> drawPile = new List<CardData>();
     [SerializeField] private GameObject cardBack;
 
+    [SerializeField] private PlayerHand playerHand;
+
     // Track the visual card objects so we can remove them when drawing
     private List<GameObject> cardVisuals = new List<GameObject>();
 
@@ -63,4 +65,14 @@ public class Deck : MonoBehaviour
             drawPile[randomIndex] = card;
         }
     }
+
+    private void OnMouseDown()
+    {
+        if(drawPile.Count <=0)
+        {
+            return;
+        }
+        playerHand.DrawNextCard();
+    }
+
 }
