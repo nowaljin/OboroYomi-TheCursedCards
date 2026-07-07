@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+  
+    private void OnEnable()
     {
-        
+        PlayerEvents.OncardPlayed += HandleCardPlayed;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
+    {
+        PlayerEvents.OncardPlayed -= HandleCardPlayed;
+    }
+
+    private void HandleCardPlayed(CardData cardData)
     {
         
+        Debug.Log("handler ran");
     }
+    
+        
+    
+
+  
 }

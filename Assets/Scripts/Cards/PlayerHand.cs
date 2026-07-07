@@ -32,7 +32,7 @@ public class PlayerHand : MonoBehaviour
     {
         if(cardSlots == null || cardsInHand.Count >= cardSlots.Length)
         {
-            Debug.Log("Hand is Full or slots are null.");
+            Debug.Log("Hand is full or slots are null");
             return;
         }
 
@@ -56,11 +56,12 @@ public class PlayerHand : MonoBehaviour
 
     public void PlayCard (Card card)
     {
-        Debug.Log("play card");
+        
         cardsInHand.Remove(card);
         discardPile.DiscardCard(card.GetCardData());
         Destroy(card.gameObject);
         RepositionCards();
+        PlayerEvents.CardPlayed(card.GetCardData());
 
     } 
 
