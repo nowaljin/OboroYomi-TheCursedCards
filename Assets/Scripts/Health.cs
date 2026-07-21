@@ -9,8 +9,8 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        //currentHealth = totalHealth;
-        currentHealth = 98;
+        currentHealth = totalHealth;
+        
     }
 
     public void HealDamage(int amount)
@@ -32,6 +32,13 @@ public class Health : MonoBehaviour
         }
         Debug.Log(currentHealth);
 
+
+    }
+
+    public void TakeDamage(int amount)
+    {
+       currentHealth -= amount;
+       Debug.Log("Health after damaged " + currentHealth);
 
     }
 

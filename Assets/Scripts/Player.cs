@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     private void Attack(CardData cardData)
     {
         Debug.Log("attack!" + cardData.attackPower);
-        StartCoroutine(PlayerAttackAnimation());
+        StartCoroutine(PlayerAttackAnimation(cardData));
 
     }
 
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         healVFX.Play();
     }
 
-    private IEnumerator PlayerAttackAnimation()
+    private IEnumerator PlayerAttackAnimation(CardData cardData)
     {
         Vector3 targetPosition = originalPosition + new Vector3(4f, 0, 0);
 
@@ -90,6 +90,8 @@ public class Player : MonoBehaviour
         }
 
         animationController.Play("Attack");
+        BossEvents.BossHit(cardData);
+
 
         yield return new WaitForSeconds(0.5f);
 
