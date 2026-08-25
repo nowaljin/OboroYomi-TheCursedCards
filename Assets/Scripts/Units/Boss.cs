@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    [SerializeField] private int attackDamage = 5;
    
    private Health health;
 
@@ -78,6 +79,11 @@ public class Boss : MonoBehaviour
         }
 
         animationController.Play("Attack");
+
+        PlayerEvents.PlayerHit(attackDamage);
+
+
+
         
 
 

@@ -2223,6 +2223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0442a700a29711947ac2dc095f5f72a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss
+  attackDamage: 300
   bossSprite: {fileID: 1128758399}
 --- !u!114 &1791094431
 MonoBehaviour:

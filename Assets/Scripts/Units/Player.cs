@@ -18,12 +18,14 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         PlayerEvents.OncardPlayed += HandleCardPlayed;
+        PlayerEvents.OnPlayerHit += PlayerHit;
 
     }
 
     private void OnDisable()
     {
         PlayerEvents.OncardPlayed -= HandleCardPlayed;
+        PlayerEvents.OnPlayerHit -= PlayerHit;
     }
 
     private void Awake()
@@ -39,6 +41,22 @@ public class Player : MonoBehaviour
     {
         originalPosition = playerSprite.transform.position;
     }
+
+    private void PlayerHit(int damage)
+    {
+        health.TakeDamage(damage);
+        if (!health.IsAlive())
+        {
+            //die
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        animationController.Play("Die");
+    }
+
 
     private void HandleCardPlayed(CardData cardData)
     {
