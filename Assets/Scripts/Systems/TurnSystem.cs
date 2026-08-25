@@ -29,6 +29,10 @@ public class TurnSystem : MonoBehaviour
         yield return new WaitForSeconds(turnWaitTime);
         Debug.Log("Boss Turn Started");
         TurnEvents.BossTurnStart();
+        yield return new WaitForSeconds(turnWaitTime);
+        Debug.Log("Player Turn Started");
+        TurnEvents.PlayerTurnStart();
+        
     }
 
 }

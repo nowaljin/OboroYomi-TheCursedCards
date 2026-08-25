@@ -28,6 +28,34 @@ public class PlayerHand : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        TurnEvents.OnPlayerTurnEnd += DisableHand;
+        TurnEvents.OnPlayerTurnStart += EnableHand;
+    }
+
+    private void OnDisable()
+    {
+        TurnEvents.OnPlayerTurnEnd -= DisableHand;
+        TurnEvents.OnPlayerTurnStart -= EnableHand;
+    }
+
+    private void DisableHand()
+    {
+       foreach (Card card in cardsInHand)
+        {
+            card.SetInteractable(false);
+        }
+    }
+
+    private void EnableHand()
+    {
+       foreach (Card card in cardsInHand)
+        {
+            card.SetInteractable(true);
+        }
+    }
+
     public void DrawNextCard()
     {
         if(cardSlots == null || cardsInHand.Count >= cardSlots.Length)
