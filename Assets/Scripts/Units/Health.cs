@@ -1,7 +1,14 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private Slider healthSlider;
+
     [SerializeField] private int totalHealth = 100;
 
     private int currentHealth;
@@ -10,12 +17,20 @@ public class Health : MonoBehaviour
     private void Start()
     {
         currentHealth = totalHealth;
+        UpdateHealthUI();
         
+    }
+
+    private void UpdateHealthUI()
+    {
+        healthText.text = currentHealth + "/" + totalHealth;
+        healthSlider.maxValue = totalHealth;
+        healthSlider.value = currentHealth;
     }
 
     public void HealDamage(int amount)
     {
-       Debug.Log("Healing Damage: " );
+       
 
        if (amount <= 0)
        {
@@ -30,7 +45,8 @@ public class Health : MonoBehaviour
         {
             currentHealth = totalHealth;
         }
-        Debug.Log(currentHealth);
+        
+        UpdateHealthUI();
 
 
     }
@@ -38,8 +54,12 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
        currentHealth -= amount;
-       Debug.Log("Health after damaged " + currentHealth);
-
+       if (currentHealth < 0)
+       {
+            currentHealth = 0;
+       }
+       
+       UpdateHealthUI();
     }
 
 
