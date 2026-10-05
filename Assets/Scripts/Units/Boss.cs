@@ -60,6 +60,7 @@ public class Boss : MonoBehaviour
     {
        //trigger death anim
        animationController.Play("Die");
+       BossEvents.BossDeath();
     }
 
     private IEnumerator BossAttackAnimation()
