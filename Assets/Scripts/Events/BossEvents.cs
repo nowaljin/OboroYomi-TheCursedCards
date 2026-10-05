@@ -1,5 +1,8 @@
 using UnityEngine;
 using System;
+using System.Collections;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public static class BossEvents
 {
@@ -13,4 +16,13 @@ public static class BossEvents
         OnBossHit?.Invoke(cardData);
 
     }
+
+    public static void BossDeath()
+    {
+        OnBossDeath?.Invoke();
+    }
+
+
+
+
 }

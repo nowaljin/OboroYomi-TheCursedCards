@@ -1,7 +1,8 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +10,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI winLoseDisplay;
 
-    private void Start()
-    {
-        Time.timeScale = 1f;
-    }
+    
    private void OnEnable()
     {
         BossEvents.OnBossDeath += PlayerWin;
