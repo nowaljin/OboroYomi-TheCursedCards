@@ -39,7 +39,7 @@ public class Deck : MonoBehaviour
             return data;
         }
 
-        Debug.LogWarning("Tried to draw, but the deck is empty!");
+        
         return null;
     }
 

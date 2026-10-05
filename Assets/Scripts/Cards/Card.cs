@@ -65,7 +65,7 @@ public class Card : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Mouse Entered");
+        
         transform.localScale = orginalScale * hoverScale;
         transform.localPosition += new Vector3(0, hoverOffset, 0f);
         sortingGroup.sortingOrder += 1;
@@ -77,7 +77,7 @@ public class Card : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Mouse Exit");
+        
         transform.localScale = orginalScale;
         transform.localPosition = orginalPosition;
         sortingGroup.sortingOrder = originalSortingOrder;
@@ -99,7 +99,7 @@ public class Card : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Debug.Log("Mouse up");
+       
         isBeingDragged = false;
         transform.localScale = orginalScale;
         transform.localPosition = orginalPosition;
