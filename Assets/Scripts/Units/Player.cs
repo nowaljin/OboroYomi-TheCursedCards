@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         animationController.Play("Die");
+        PlayerEvents.PlayerDeath();
     }
 
 
